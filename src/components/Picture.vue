@@ -14,7 +14,7 @@
 <script>
 import { reactive } from 'vue';
 import { Picture } from '../models/Picture';
-import { picturesService } from '../services/picturesService';
+import picturesService from '../services/PicturesService';
 export default {
   name: 'Picture',
   props: { picture:{type: Picture, required: true}},

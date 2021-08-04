@@ -1,31 +1,31 @@
 <template>
   <div class="PictureList">
     <form @submit.prevent="getPictures">
-      <input v-model="state.query" type="text" name="" id="" placeholder="what day would you like to view?">
+      <input v-model="state.query" type="text" name="" id="" placeholder="please choose a day" />
       <button class="btn btn-info" @click="setActivePicture">View</button>
     </form>
     <div class="col-12">
       <Picture v-for="p in pictures" :key="p" :picture="p" />
-
-
+    </div>
   </div>
 </template>
 
 
 <script>
-import { computed, onMounted, reactive } from "@vue/reactivity"
-import {picturesService} from '../services/picturesService'
+import { computed, onMounted, reactive } from "vue";
+import {picturesService} from '../services/PicturesService'
 import { AppState } from "../AppState";
 import Picture from '../components/Picture.vue'
 export default {
   name: 'PictureList',
   setup(){
+    console.log('loading picture list');
 const state = reactive({
 query: ''
-})
+});
 onMounted(()=> {
   picturesService.getPictures()
-})
+});
   return {
     state,
     pictures: computed(()=> AppState.pictures),

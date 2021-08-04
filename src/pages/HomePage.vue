@@ -1,13 +1,13 @@
 <template>
-  <div class="component container-fluid">
+  <div class="component">
 
   <div class="row ">
     <div class="col-md-12 py-3 bg-primary text-center text-light text-shadow">
-      <h2>NASA Picture of the Day</h2>
+      <h2>Picture of the Day</h2>
       </div> 
     </div>
   <div class="col-md-4">
-    <PictureList/>
+    <PictureList />
   </div>
   <div class="col-md-8">
     <PictureDetails />
@@ -24,6 +24,7 @@ import PictureDetails from '../components/PictureDetails..vue'
 export default {
   name: 'HomePage',
     setup(){
+      console.log('loading home page')
       const state = reactive({
 
       })
