@@ -6,7 +6,7 @@ export class Picture {
     this.date = data.date
     this.title = data.title
     this.explanation = data.explanation
-    this.hdurl =  data.hdurl
+    this.url =  data.url
    }
   
   

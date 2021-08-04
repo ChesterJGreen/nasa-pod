@@ -1,7 +1,7 @@
 <template>
   <div @submit.prevent="setActivePicture" class="picture row">
     <div class="col-4">
-      <img :src="picture.hdurl" alt="" class="img-fluid">
+      <img :src="picture.url" alt="" class="img-fluid">
     </div>
     <div class="col-8">
       <div>{{picture.title}}</div>
