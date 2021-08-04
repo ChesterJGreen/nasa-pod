@@ -1,27 +1,40 @@
 <template>
-  <div class="picture row">
-    <div class="col-12">
-<img :src="movie.picture" alt="NASA pod" class="img-fluid">
+  <div @submit.prevent="setActivePicture" class="picture row">
+    <div class="col-4">
+      <img :src="picture.hdurl" alt="" class="img-fluid">
     </div>
-    <div class="col-12 textl-center">
-      <button>Get a New Picture</button>
+    <div class="col-8">
+      <div>{{picture.title}}</div>
+      <div class="text-warning">{{picture.explanation}}</div>
     </div>
-
   </div>
 </template>
 
 
 <script>
+import { reactive } from 'vue';
+import { Picture } from '../models/Picture';
+import { picturesService } from '../services/picturesService';
 export default {
-  name: 'picture',
-  setup(){
-    return {}
-  },
-  components:{}
-}
+  name: 'Picture',
+  props: { picture:{type: Picture, required: true}},
+  setup(props){
+const state = reactive({
+})
+    return { state,
+    setActivePicture(){
+      picturesService.setActivePicture(props.picture)
+    }
+    }
+  }
+};
 </script>
 
 
-<style lang="scss" scoped>
-
+<style scoped>
+.picture:hover{
+  color: aqua;
+  transform: scale(1.1);
+  cursor: pointer;
+}
 </style>

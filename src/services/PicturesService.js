@@ -1,16 +1,30 @@
-import { nasaApi } from "./Axios";
+import { AppState } from "../AppState"
+import { Picture } from "../models/Picture"
+import { nasaApi } from "./Axios"
+
 
 
 
 class PicturesService{
-  async getPicture( query = 'api_key=DEMO_KEY'){
-    try {
-      const res = await nasaApi.get('&query='+ query)
-      console.log (res.data)
-      
-    }catch(error){
+ 
+async getPictures(query){
+  try {
+    const res = await nasaApi.get('apod?api_key=eSiTFhhy7WCqknhfbCLmoGGfEgvKewnmMsNH6lZh&date='+query)
+    console.log(res.data)
+    AppState.activePicture = new Picture(res.data)
+    } catch (error) {
       console.error(error)
     }
+ 
   }
+
+
+setActivePicture(picture){
+  console.log('setting picture', picture)
+  AppState.activePicture = picture
 }
-export const picturesService = new PicturesService
+
+
+}
+
+export const picturesService = new PicturesService()
