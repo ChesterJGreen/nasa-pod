@@ -6,10 +6,10 @@
       <h2>Picture of the Day</h2>
       </div> 
     </div>
-  <div class="col-md-4">
+  <div class="col-md-12">
     <PictureList />
   </div>
-  <div class="col-md-8">
+  <div class="col-md-10 offset-1">
     <PictureDetails />
   </div>
 </div>
@@ -39,4 +39,5 @@ export default {
 .img-fluid{
   height: 5vh;
 }
+
 </style>

@@ -7,9 +7,9 @@ import { nasaApi } from "./Axios"
 
 class PicturesService{
  
-async getPictures(){
+async getPictures(query){
   try {
-    const res = await nasaApi.get('apod?api_key=eSiTFhhy7WCqknhfbCLmoGGfEgvKewnmMsNH6lZh')
+    const res = await nasaApi.get('apod?api_key=eSiTFhhy7WCqknhfbCLmoGGfEgvKewnmMsNH6lZh&date=' +query)
     console.log(res.data)
     AppState.activePicture = new Picture(res.data)
     } catch (error) {

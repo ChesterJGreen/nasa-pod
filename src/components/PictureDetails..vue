@@ -1,10 +1,10 @@
 <template>
   <div class="PictureDetails row border border-secondary rounded p-2 mt-2">
     <h2 class="col-12">{{activePicture.title}}</h2>
-    <div class="col-6">
+    <div class="col-7">
       <img :src="activePicture.url" alt="" srcset="" class="img-fluid">
     </div>
-    <div class="col-6">{{activePicture.explanation}}</div>
+    <div class="col-5">{{activePicture.explanation}}</div>
   </div>
 </template>
 

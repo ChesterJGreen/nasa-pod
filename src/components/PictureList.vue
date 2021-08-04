@@ -1,7 +1,7 @@
 <template>
   <div class="PictureList">
-    <form @submit.prevent="getPictures">
-      <input v-model="state.query" type="text" name="" id="" placeholder="please choose a day" />
+    <form @submit.prevent="getPictures" class="py-2">
+      <input v-model="state.query" type="date" name="" id="" placeholder="please choose a day" />
       <button class="btn btn-info" @click="setActivePicture">View</button>
     </form>
     <div class="col-12">
